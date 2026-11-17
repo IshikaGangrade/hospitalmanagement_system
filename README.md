@@ -2,7 +2,9 @@
 
 > A full-stack Java web application that digitizes hospital operations — patients, doctors, appointments and billing — in one secure, database-driven platform.
 
-**Java** • **JSP & Servlets** • **JDBC** • **MySQL** • **Apache Tomcat** • **Eclipse IDE**
+**Backend:** Java • Servlets • JDBC • MySQL  |  **Frontend:** JSP • HTML5 • CSS3 • JavaScript • Bootstrap  |  **Tools:** Apache Tomcat • Eclipse IDE • Git
+
+---
 
 ## 📖 Table of Contents
 
@@ -41,7 +43,7 @@ Hospitals manage a huge amount of data every day — patient histories, doctor s
 |--------|-------------|
 | 👤 **Patient Management** | Register patients; create, view, update, search and delete records |
 | 🩺 **Doctor Management** | Maintain doctor profiles with specialization and contact details |
-| 📅 **Appointment Mangement** | Book and manage patient–doctor appointments by date and time |
+| 📅 **Appointment Scheduling** | Book and manage patient–doctor appointments by date and time |
 | 💳 **Billing** | Generate bills and track payment details for each patient |
 | 🔐 **Secure Login** | Authenticated access so only authorized staff can use the system |
 | 🗄️ **Reliable Storage** | Relational MySQL database with a ready-to-import SQL schema |
@@ -56,6 +58,7 @@ This project demonstrates practical, job-relevant engineering skills:
 |-------|------------------------|
 | ☕ **Core & Advanced Java** | Object-oriented design, classes, exception handling, collections |
 | 🌐 **Java Web Development** | Servlets and JSP handling HTTP requests and dynamic pages |
+| 🎨 **Frontend Development** | HTML5, CSS3, JavaScript and Bootstrap for clean, responsive, validated forms |
 | 🗄️ **Database Design (SQL)** | Normalized tables with primary and foreign keys |
 | 🔌 **JDBC Integration** | Connecting Java to MySQL and running CRUD queries |
 | 🧱 **MVC Architecture** | Separation of view, controller and data-access logic |
@@ -75,7 +78,10 @@ This project demonstrates practical, job-relevant engineering skills:
 | **Servlets** | Controllers that process requests and responses |
 | **JDBC** | Database connectivity and CRUD operations |
 | **MySQL** | Persistent storage of patients, doctors, appointments and bills |
-| **HTML / CSS** | Page structure and styling |
+| **HTML5** | Semantic page structure and forms |
+| **CSS3** | Styling, layout and responsive design |
+| **JavaScript** | Client-side form validation and interactivity |
+| **Bootstrap** | Responsive grid, tables, forms and ready-made UI components |
 | **Apache Tomcat** | Web server to deploy and run the application |
 | **Eclipse IDE** | Development as a Dynamic Web Project |
 | **Git & GitHub** | Version control and project hosting |
@@ -94,19 +100,36 @@ The application follows a layered **MVC** design:
 ```
 
 **Request flow:** user submits a form → servlet validates and routes → DAO runs the SQL query → result is returned to a JSP page.
+
+---
+
 ## 🗃️ Database Design
 
-Full schema: [`HospitalMangementSystem.sql`](./HospitalMangementSystem.sql)
+The complete database used by the application (tables, columns and relationships) is available in the SQL file below:
 
-```text
-   PATIENT ───< APPOINTMENT >─── DOCTOR
-      │
-      └────< BILL
+📄 **[`HospitalMangementSystem.sql`](https://github.com/IshikaGangrade/hospitalmanagement_system/blob/main/HospitalMangementSystem.sql)**
+
+**Get the database**
+
+```bash
+# Clone the repository (includes the SQL file)
+git clone https://github.com/IshikaGangrade/hospitalmanagement_system.git
+cd hospitalmanagement_system
 ```
 
-- One patient → many appointments and bills
-- One doctor → many appointments
-- Primary and foreign keys enforce data integrity
+**Import it into MySQL**
+
+The SQL file creates the database and its tables by itself, so just run it:
+
+```bash
+mysql -u your_username -p < HospitalMangementSystem.sql
+```
+
+Or from the MySQL prompt:
+
+```sql
+SOURCE HospitalMangementSystem.sql;
+```
 
 ---
 
@@ -114,10 +137,10 @@ Full schema: [`HospitalMangementSystem.sql`](./HospitalMangementSystem.sql)
 
 ### Prerequisites
 
-- JDK 17 or higher
+- JDK 8 or higher
 - Eclipse IDE for Enterprise Java Developers
-- Apache Tomcat 10 or compatible
-- MySQL Server and MySQL Connector/Jar9
+- Apache Tomcat 9 or compatible
+- MySQL Server and MySQL Connector/J
 
 ### Installation
 
@@ -130,10 +153,8 @@ cd hospitalmanagement_system
 
 **2. Import the database**
 
-```sql
-CREATE DATABASE hospital_management;
-USE hospital_management;
-SOURCE HospitalMangementSystem.sql;
+```bash
+mysql -u your_username -p < HospitalMangementSystem.sql
 ```
 
 **3. Open in Eclipse**
@@ -143,6 +164,14 @@ SOURCE HospitalMangementSystem.sql;
 **4. Add the MySQL connector**
 
 Place `mysql-connector-j.jar` in the build path and in `WEB-INF/lib`.
+
+**5. Set database credentials**
+
+```java
+String url  = "jdbc:mysql://localhost:3306/<database_name_in_sql_file>";
+String user = "your_username";
+String pass = "your_password";
+```
 
 **6. Run**
 
@@ -167,13 +196,7 @@ hospitalmanagement_system/
 └── README.md
 ```
 
-🔒 Security Implementation
-Session-based authentication
-Role-based authorization
-AuthFilter for login protection
-RoleFilter for endpoint-level access control
-Restricted dashboard access per role
-Direct JSP access prevention
+---
 
 ## 🎓 Key Learnings
 
@@ -186,11 +209,12 @@ Direct JSP access prevention
 
 ## 🗺️ Roadmap
 
-- [ ] Role-based access (Admin, Doctor, bills, Patient)
+- [ ] Role-based access (Admin, Doctor, Receptionist, Patient)
 - [ ] Password hashing and stronger input validation
 - [ ] Email / SMS appointment reminders
 - [ ] PDF bills and medical reports
 - [ ] Analytics dashboard
+- [ ] REST API and fully responsive UI
 - [ ] Unit tests and CI with GitHub Actions
 
 ---
