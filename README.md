@@ -46,7 +46,7 @@ Hospitals manage a huge amount of data every day — patient histories, doctor s
 |--------|-------------|
 | 👤 **Patient Management** | Register patients; create, view, update, search and delete records |
 | 🩺 **Doctor Management** | Maintain doctor profiles with specialization and contact details |
-| 📅 **Appointment Scheduling** | Book and manage patient–doctor appointments by date and time |
+| 📅 **Appointment Mangement** | Book and manage patient–doctor appointments by date and time |
 | 💳 **Billing** | Generate bills and track payment details for each patient |
 | 🔐 **Secure Login** | Authenticated access so only authorized staff can use the system |
 | 🗄️ **Reliable Storage** | Relational MySQL database with a ready-to-import SQL schema |
@@ -99,9 +99,6 @@ The application follows a layered **MVC** design:
 ```
 
 **Request flow:** user submits a form → servlet validates and routes → DAO runs the SQL query → result is returned to a JSP page.
-
----
-
 ## 🗃️ Database Design
 
 Full schema: [`HospitalMangementSystem.sql`](./HospitalMangementSystem.sql)
