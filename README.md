@@ -122,10 +122,10 @@ Full schema: [`HospitalMangementSystem.sql`](./HospitalMangementSystem.sql)
 
 ### Prerequisites
 
-- JDK 8 or higher
+- JDK 17 or higher
 - Eclipse IDE for Enterprise Java Developers
-- Apache Tomcat 9 or compatible
-- MySQL Server and MySQL Connector/J
+- Apache Tomcat 10 or compatible
+- MySQL Server and MySQL Connector/Jar9
 
 ### Installation
 
@@ -151,14 +151,6 @@ SOURCE HospitalMangementSystem.sql;
 **4. Add the MySQL connector**
 
 Place `mysql-connector-j.jar` in the build path and in `WEB-INF/lib`.
-
-**5. Set database credentials**
-
-```java
-String url  = "jdbc:mysql://localhost:3306/hospital_management";
-String user = "your_username";
-String pass = "your_password";
-```
 
 **6. Run**
 
@@ -202,12 +194,11 @@ Direct JSP access prevention
 
 ## 🗺️ Roadmap
 
-- [ ] Role-based access (Admin, Doctor, Receptionist, Patient)
+- [ ] Role-based access (Admin, Doctor, bills, Patient)
 - [ ] Password hashing and stronger input validation
 - [ ] Email / SMS appointment reminders
 - [ ] PDF bills and medical reports
 - [ ] Analytics dashboard
-- [ ] REST API and fully responsive UI
 - [ ] Unit tests and CI with GitHub Actions
 
 ---
