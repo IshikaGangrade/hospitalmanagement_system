@@ -3,11 +3,6 @@
 > A full-stack Java web application that digitizes hospital operations — patients, doctors, appointments and billing — in one secure, database-driven platform.
 
 **Java** • **JSP & Servlets** • **JDBC** • **MySQL** • **Apache Tomcat** • **Eclipse IDE**
-📌 Problem Statement
-Hospitals require centralized control over patient records, doctor management, department administration, appointment scheduling, prescriptions, and audit tracking.
-
-Manual or disconnected systems introduce inefficiencies, security risks, and poor traceability.
-This system provides a structured, secure, database-driven platform to manage multi-role healthcare operations in a unified environment.
 
 ## 📖 Table of Contents
 
