@@ -19,12 +19,10 @@ public class AdminRegisterServlet extends HttpServlet {
 		super();
 
 	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
@@ -40,21 +38,12 @@ public class AdminRegisterServlet extends HttpServlet {
 		admin.setName(name);
 		admin.setEmail(email);
 		admin.setPassword(password);
-
 		AdminDAO dao = new AdminDAO();
-
 		boolean status = dao.register(admin);
-
 		if (status) {
-
 			response.sendRedirect("login.jsp");
-
 		} else {
-
 			response.sendRedirect("register.jsp");
-
 		}
-
 	}
-
 }

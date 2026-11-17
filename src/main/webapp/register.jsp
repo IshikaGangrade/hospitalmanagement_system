@@ -86,7 +86,6 @@ font-weight:bold;
 <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
 <button class="btn-register">Register</button>
 </form>
-
 <div class="bottom">
 Already have an account?
 <a href="login.jsp">Login</a>

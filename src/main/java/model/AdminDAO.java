@@ -3,12 +3,9 @@ package model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
 import entity.Admin;
-
 public class AdminDAO {
 	public boolean login(String email, String password) {
-
 		boolean status = false;
 		try {
 			Connection con = DBUtil.makeConnection();
@@ -24,11 +21,8 @@ public class AdminDAO {
 		}
 		return status;
 	}
-
 	public boolean register(Admin admin) {
-
 		boolean status = false;
-
 		try {
 			Connection con = DBUtil.makeConnection();
 			PreparedStatement ps = con.prepareStatement("insert into admin(name,email,password) values(?,?,?)");
@@ -44,6 +38,5 @@ public class AdminDAO {
 			e.printStackTrace();
 		}
 		return status;
-
 	}
 }

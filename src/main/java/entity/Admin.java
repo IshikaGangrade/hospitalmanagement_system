@@ -5,7 +5,6 @@ private int id;
 private String name;
 private String email;
 private String password;
-
 public Admin(int id, String name, String email, String password) {
 	super();
 	this.name = name;
@@ -13,7 +12,7 @@ public Admin(int id, String name, String email, String password) {
 	this.password = password;
 }
 public Admin() {
-	// TODO Auto-generated constructor stub
+	
 }
 public int getId() {
 	return id;
@@ -43,5 +42,4 @@ public void setPassword(String password) {
 public String toString() {
 	return "Admin [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
 }
-
 }
