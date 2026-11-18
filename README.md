@@ -101,8 +101,6 @@ The application follows a layered **MVC** design:
 
 **Request flow:** user submits a form → servlet validates and routes → DAO runs the SQL query → result is returned to a JSP page.
 
----
-
 ## 🗃️ Database Design
 
 The complete database used by the application (tables, columns and relationships) is available in the SQL file below:
@@ -137,7 +135,7 @@ SOURCE HospitalMangementSystem.sql;
 
 ### Prerequisites
 
-- JDK 8 or higher
+- JDK 17 or higher
 - Eclipse IDE for Enterprise Java Developers
 - Apache Tomcat 9 or compatible
 - MySQL Server and MySQL Connector/J
@@ -168,20 +166,17 @@ Place `mysql-connector-j.jar` in the build path and in `WEB-INF/lib`.
 **5. Set database credentials**
 
 ```java
-String url  = "jdbc:mysql://localhost:3306/<database_name_in_sql_file>";
-String user = "your_username";
+String url  = "jdbc:mysql://localhost:3306/hospitaldb";
+String user = "root";
 String pass = "your_password";
 ```
 
 **6. Run**
 
 Right-click the project → `Run As → Run on Server` → select Tomcat, then open:
-
 ```
-http://localhost:8080/hospitalmanagement_system
+http://localhost:8080/HospitalManagementSystem/
 ```
-
----
 
 ## 📂 Project Structure
 
@@ -194,9 +189,6 @@ hospitalmanagement_system/
 ├── .settings/                     # Eclipse settings
 ├── LICENSE                        # Apache 2.0
 └── README.md
-```
-
----
 
 ## 🎓 Key Learnings
 
